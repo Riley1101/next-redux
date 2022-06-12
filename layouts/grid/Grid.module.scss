@@ -1,0 +1,79 @@
+@use "@/styles/theme/breakpoints" as *;
+
+.grid {
+  width: 100%;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  @include md {
+    width: 70%;
+    margin-inline: auto;
+    padding: 0em;
+    margin-block: 1em;
+  }
+}
+.title {
+  width: 100%;
+  padding-inline: 1em;
+  margin: 0;
+  font-size: 1.2rem;
+  margin-top: 1em;
+  color: white;
+  & > h1 {
+    margin: 0;
+  }
+  @include md {
+    font-size: 2.2rem;
+    width: 70%;
+    margin-inline: auto;
+    padding: 0em;
+    margin-block: 1em;
+  }
+}
+.load_more {
+  all: unset;
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  background-color: rgba(218, 218, 218, 0.167);
+  padding: 1em 3em;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 2.5em;
+  color: white;
+  &:hover {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+  &:active {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+}
+
+.add {
+  width: max-content;
+  height: 3em;
+  text-align: center;
+  margin-inline: auto;
+  background-color: rgba(218, 218, 218, 0.167);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding-inline: 2em;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+  &:active {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+}

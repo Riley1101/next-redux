@@ -1,0 +1,14 @@
+$co-primary: #1363df;
+$bg-primary: #06283d;
+
+$co-text: #ffffff;
+$co-text-muted: #d2d2d2;
+$co-text-dark: #333333;
+
+:export {
+  co-primary: $co-primary;
+  bg-primary: $bg-primary;
+  co-text: $co-text;
+  co-text-muted: $co-text-muted;
+  co-text-dark: $co-text-dark;
+}

@@ -1,0 +1,41 @@
+@use "@/styles/theme/breakpoints" as *;
+@use "@/styles/theme/colors" as *;
+@use "@/styles/theme/components";
+
+.header {
+  width: 100%;
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $co-text;
+  align-items: center;
+  background-color: #2a292974;
+  @include md {
+    width: 70%;
+    margin-top: 1em;
+    margin-inline: auto;
+    border-radius: 10px;
+    padding-inline: 2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  }
+  &__avator {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &__nav {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 1em;
+    &__item {
+      cursor: pointer;
+      font-size: 1rem;
+      text-transform: lowercase;
+      &:hover {
+        outline: $co-primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}

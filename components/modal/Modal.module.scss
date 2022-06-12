@@ -1,0 +1,81 @@
+@use "@/styles/theme/breakpoints" as *;
+@use "@/styles/theme/colors" as *;
+@use "@/styles/theme/components";
+
+.container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.643);
+}
+
+.form {
+  border-radius: 5px;
+  min-width: 250px;
+  aspect-ratio: 16/9;
+  padding: 3em;
+  background-color: rgb(59, 59, 59);
+  color: $co-text;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  @include md {
+    min-width: 400px;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    & > label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: $co-text-muted;
+    }
+    & > input {
+      border-radius: 5px;
+      border: 1px solid $co-text-muted;
+      padding: 0.5em;
+      background-color: rgb(59, 59, 59);
+      &:focus {
+        outline: none;
+        border-color: $co-primary;
+      }
+    }
+  }
+}
+.btn {
+  width: 100%;
+  height: 3em;
+  text-align: center;
+  margin-inline: auto;
+  background-color: rgba(218, 218, 218, 0.167);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+  &:active {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+}
+
+.cta_group {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  & > .btn:first-child {
+    background-color: rgba(218, 218, 218, 0.058);
+  }
+}

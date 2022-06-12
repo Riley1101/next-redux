@@ -1,0 +1,39 @@
+@use "@/styles/theme/breakpoints" as *;
+@use "@/styles/theme/colors" as *;
+@use "@/styles/theme/components";
+
+.footer {
+  width: 100%;
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $co-text-muted;
+  align-items: center;
+  background-color: rgb(59, 59, 59);
+  @include md {
+    width: 70%;
+    margin-block: 1em;
+    margin-inline: auto;
+    border-radius: 10px;
+    padding-inline: 2em;
+  }
+  &__avator {
+    cursor: pointer;
+  }
+  &__nav {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 1em;
+    &__item {
+      cursor: pointer;
+      font-size: 1rem;
+      text-transform: lowercase;
+      &:hover {
+        color: $co-text;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use "@/styles/theme/breakpoints" as *;
+@use "@/styles/theme/colors" as *;
+@use "@/styles/theme/components";
+
+%three_cols {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 2fr;
+  gap: 1em;
+  color: rgb(185, 185, 185);
+  font-size: 0.8rem;
+}
+.card {
+  padding: 1em;
+  background-color: #4e4e4e74;
+  border-radius: 5px;
+  color: $co-text;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0.5em 0.5em rgba(82, 82, 82, 0.1);
+  }
+  &__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    @include md {
+      margin-bottom: 0.5em;
+    }
+  }
+  &__team {
+    @extend %three_cols;
+  }
+  &__height {
+    @extend %three_cols;
+  }
+  &__position {
+    @extend %three_cols;
+  }
+  &__weight {
+    @extend %three_cols;
+  }
+  @include md {
+    padding-inline: 2em;
+    padding-block: 2em;
+  }
+}
+
+.btn {
+  width: 100%;
+  height: 2.5em;
+  text-align: center;
+  margin-inline: auto;
+  background-color: rgba(218, 218, 218, 0.058);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+  &:active {
+    outline: solid 1px rgb(185, 185, 185);
+  }
+}
+
+.cta_group {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
