@@ -5,6 +5,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import Loading from "@/components/loading";
 function MyApp({ Component, pageProps }) {
   const options = {
     position: positions.BOTTOM_RIGHT,
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AlertProvider template={AlertTemplate} {...options}>
       <Provider store={store}>
-        <PersistGate persistor={persistor}>
+        <PersistGate loading={<Loading />} persistor={persistor}>
           <Component {...pageProps} />
         </PersistGate>
       </Provider>
