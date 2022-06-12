@@ -6,7 +6,7 @@ import useTeams, { useTeamCURD } from "@/hooks/useTeams";
 import TeamModal from "@/components/modal";
 const Teams = () => {
   const { data, more, status } = useTeams();
-  const { onToggle, type, inProgress, createTeam, updateTeam, deleteTeam } =
+  const { onToggle, inProgress, createTeam, updateTeam, deleteTeam } =
     useTeamCURD();
 
   return (

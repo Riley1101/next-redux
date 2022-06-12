@@ -9,9 +9,12 @@ const Header = () => {
   let dispatch = useDispatch();
   return (
     <header className={styles.header}>
-      <div className={styles.header__avator}>
-        Hi {authenticated ? username : "Anonymous"}
-      </div>
+      <Link href="/">
+        <div className={styles.header__avator}>
+          Hi {authenticated ? username : "Anonymous"}
+        </div>
+      </Link>
+
       <ul className={styles.header__nav}>
         <li>
           <Link href="/">

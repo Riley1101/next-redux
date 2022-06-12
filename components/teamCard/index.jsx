@@ -1,12 +1,24 @@
 import React from "react";
 import styles from "@/components/teamCard/TeamCard.module.scss";
-import { toggle } from "@/state/slices/teamCURDSlice";
+import { toggle, onChange } from "@/state/slices/teamCURDSlice";
 import { useDispatch } from "react-redux";
-
 const TeamCard = (props) => {
   const { team } = props;
   const dispatch = useDispatch();
-
+  let handleDelete = () => {
+    dispatch(onChange({ name: "name", value: team.name }));
+    dispatch(onChange({ name: "count", value: team.count }));
+    dispatch(onChange({ name: "region", value: team.city }));
+    dispatch(onChange({ name: "country", value: team.division }));
+    dispatch(toggle({ inProgress: true, type: "delete" }));
+  };
+  let handleUpdate = () => {
+    dispatch(onChange({ name: "name", value: team.name }));
+    dispatch(onChange({ name: "count", value: team.count }));
+    dispatch(onChange({ name: "region", value: team.city }));
+    dispatch(onChange({ name: "country", value: team.division }));
+    dispatch(toggle({ inProgress: true, type: "update" }));
+  };
   return (
     <div className={styles.card}>
       <h2 className={styles.card__name}>{team.name}</h2>
@@ -34,7 +46,7 @@ const TeamCard = (props) => {
         <button
           value="Submit"
           className={styles.btn}
-          onClick={() => dispatch(toggle({ inProgress: true, type: "delete" }))}
+          onClick={() => handleDelete()}
         >
           DELETE
         </button>
@@ -42,7 +54,9 @@ const TeamCard = (props) => {
           type="submit"
           value="Submit"
           className={styles.btn}
-          onClick={() => dispatch(toggle({ inProgress: true, type: "update" }))}
+          onClick={() => {
+            handleUpdate();
+          }}
         >
           UPDATE
         </button>

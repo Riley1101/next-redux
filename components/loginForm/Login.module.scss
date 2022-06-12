@@ -10,7 +10,8 @@
 }
 
 .form {
-  min-width: 400px;
+  min-width: 300px;
+
   aspect-ratio: 16/9;
   padding: 3em;
   background-color: rgb(59, 59, 59);
@@ -18,6 +19,9 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
+  @include md {
+    min-width: 400px;
+  }
   &__title {
     margin: 0;
   }
